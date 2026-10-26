@@ -2,6 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "orchestrator",
   "instructions": [".opencode/framework.md"],
+  "model": "deepseek/deepseek-v4-pro",
+  "agents": {
+    "analyst":           { "model": "deepseek/deepseek-v4-pro#high" },
+    "architect":         { "model": "deepseek/deepseek-v4-pro#high" },
+    "java-reviewer":     { "model": "deepseek/deepseek-flash" },
+    "frontend-reviewer": { "model": "deepseek/deepseek-flash" },
+    "tester":            { "model": "deepseek/deepseek-flash" },
+    "devops":            { "model": "deepseek/deepseek-flash" }
+  },
   "permission": {
     "read": {
       "*": "allow",
