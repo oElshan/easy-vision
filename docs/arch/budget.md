@@ -23,13 +23,16 @@
 
 | Категория | Кол-во | Список |
 |---|---|---|
-| Микросервисы / модули | 0 | — |
-| External calls | 0 | — |
+| Микросервисы / модули | 1 | `vision-assistant` (backend) |
+| External calls | 1 | AI vision/OCR/TTS провайдер (вендор — по ADR) |
 | Очереди / topics | 0 | — |
-| БД / схемы | 0 | — |
+| БД / схемы | 1 | PostgreSQL (схема `public`, таблица `requests`) |
 | Cron / workers | 0 | — |
 
 ## Журнал изменений
 
 | Дата | Story | Ресурс | ADR |
 |---|---|---|---|
+| 2026-10-27 | 1-vision-assistant (spec) | модуль `vision-assistant` | нужен (architect) |
+| 2026-10-27 | 1-vision-assistant (spec) | внешний AI vision/OCR/TTS провайдер | нужен (architect) |
+| 2026-10-27 | 1-vision-assistant (spec) | БД PostgreSQL (схема `public`) | нужен (architect) |

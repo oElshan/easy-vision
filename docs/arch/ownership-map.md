@@ -11,6 +11,7 @@
 
 | Таблица | Owner (модуль/сервис) | Пишут | Читают |
 |---|---|---|---|
+| `requests` | `vision-assistant` | `vision-assistant` | `vision-assistant` |
 
 ## Очереди / Topics / Exchanges
 
@@ -21,8 +22,11 @@
 
 | Endpoint | Owner | Consumers |
 |---|---|---|
+| `/requests` (POST, GET) | `vision-assistant` | Angular frontend (web) |
+| `/requests/{id}` (GET) | `vision-assistant` | Angular frontend (web) |
 
 ## Shared contracts (DTO / Events)
 
 | Контракт | Owner | Consumers (grep evidence при изменении) |
 |---|---|---|
+| `RequestDto` / `ResultDto` | `vision-assistant` | Angular frontend (web) |
