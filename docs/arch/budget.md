@@ -24,15 +24,18 @@
 | Категория | Кол-во | Список |
 |---|---|---|
 | Микросервисы / модули | 1 | `vision-assistant` (backend) |
-| External calls | 1 | AI vision/OCR/TTS провайдер (вендор — по ADR) |
+| External calls | 1 | AI vision/OCR/TTS провайдер — Yandex Cloud (Vision + SpeechKit) |
 | Очереди / topics | 0 | — |
 | БД / схемы | 1 | PostgreSQL (схема `public`, таблица `requests`) |
-| Cron / workers | 0 | — |
+| Объектные хранилища | 1 | MinIO (S3-compatible): buckets `photos`, `audio` |
+| Cron / workers | 1 | `VisionProcessor` (in-process `@Scheduled` poller) |
 
 ## Журнал изменений
 
 | Дата | Story | Ресурс | ADR |
 |---|---|---|---|
-| 2026-10-27 | 1-vision-assistant (spec) | модуль `vision-assistant` | нужен (architect) |
-| 2026-10-27 | 1-vision-assistant (spec) | внешний AI vision/OCR/TTS провайдер | нужен (architect) |
-| 2026-10-27 | 1-vision-assistant (spec) | БД PostgreSQL (схема `public`) | нужен (architect) |
+| 2026-10-27 | 1-vision-assistant (spec) | модуль `vision-assistant` | ADR-1 (arch) |
+| 2026-10-27 | 1-vision-assistant (spec) | внешний AI vision/OCR/TTS провайдер | ADR-2 (arch) |
+| 2026-10-27 | 1-vision-assistant (spec) | БД PostgreSQL (схема `public`) | ADR-4 (arch) |
+| 2026-10-27 | 1-vision-assistant (arch) | объектное хранилище MinIO | ADR-3 (arch) |
+| 2026-10-27 | 1-vision-assistant (arch) | background worker `VisionProcessor` | не нужен (< 5) |

@@ -13,6 +13,13 @@
 |---|---|---|---|
 | `requests` | `vision-assistant` | `vision-assistant` | `vision-assistant` |
 
+## Объектные хранилища (buckets)
+
+| Bucket | Owner (модуль/сервис) | Пишут | Читают |
+|---|---|---|---|
+| `photos` | `vision-assistant` | `vision-assistant` | `vision-assistant` |
+| `audio` | `vision-assistant` | `vision-assistant` | `vision-assistant` (presigned URL → frontend) |
+
 ## Очереди / Topics / Exchanges
 
 | Ресурс | Producer (owner) | Consumers |
@@ -24,6 +31,7 @@
 |---|---|---|
 | `/requests` (POST, GET) | `vision-assistant` | Angular frontend (web) |
 | `/requests/{id}` (GET) | `vision-assistant` | Angular frontend (web) |
+| `/requests/{id}/audio` (GET) | `vision-assistant` | Angular frontend (web) |
 
 ## Shared contracts (DTO / Events)
 
