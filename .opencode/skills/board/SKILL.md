@@ -52,7 +52,7 @@ ls .agents/board/ 2>/dev/null | sed -n 's/^\([0-9][0-9]*\)\.md$/\1/p' | sort -n 
 | `spec_sha` | `git hash-object` spec на момент утверждения | feature |
 | `approved` | дата утверждения или "" | feature |
 | `pr` | ссылка на PR или "" | feature и самостоятельные задачи |
-| `github` | `{issue, item, stage}` | все, в режиме github |
+| `github` | `{issue, item, stage}`, `stage` = статус, который последним ушёл на GitHub | все, в режиме github |
 | `created`, `updated` | YYYY-MM-DD | все |
 
 Тело карточки: разделы `## Описание`, `## Замечания к исправлению`, `## Журнал`.
