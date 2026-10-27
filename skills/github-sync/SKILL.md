@@ -131,6 +131,11 @@ jq -r '.fields[] | select(.name=="Status") | .options[] | select(.name=="Testing
 Карточку пушим, когда `github.issue` пуст или `github.stage` не равен `status`.
 `github.stage` хранит статус, который последним ушёл на GitHub.
 
+Карточки пушатся по одной: один вызов `gh issue create` на карточку, номер issue сразу
+записывается в её `github`. Заголовки и тела не собирай в shell-массивы и не сопоставляй
+списки по индексу: shell OpenCode бывает zsh, где массивы нумеруются с 1, и цикл по индексу
+отдаёт карточке чужой заголовок и тело.
+
 1. Issue нет: тело карточки (разделы «Описание», для story ещё список AC по ID и ссылка на
    spec) запиши в `.agents/cache/issue-<id>.md` и создай issue:
    ```bash
